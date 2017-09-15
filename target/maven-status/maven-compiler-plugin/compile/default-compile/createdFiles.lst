@@ -1,3 +1,8 @@
+com\research\dto\test.class
+com\research\model\test.class
+com\research\service\test.class
 com\research\ResearchCenterApplication.class
-com\research\entiy\BaseEntity.class
-com\research\exception\BusinessException.class
+com\research\configurations\test.class
+com\research\exception\test.class
+com\research\exceptions\test.class
+com\research\controllers\test.class
