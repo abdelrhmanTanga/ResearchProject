@@ -5,7 +5,8 @@
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
    http://www.liquibase.org/xml/ns/dbchangelog 
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
-
+       
+        <!--sequences begin-->
 	<changeSet id="201705150542" author="abdelrhman">
 		<createSequence sequenceName="SEQ_PROJECT_ROLE" />
 	</changeSet>
@@ -33,7 +34,18 @@
 	<changeSet id="20170915050" author="abdelrhman">
 		<createSequence sequenceName="SEQ_EMPLOYEE_ROLE" />
 	</changeSet>
-
+        
+        <changeSet id="201709150853" author="moamen">
+            <createSequence sequenceName="SEQ_TASKS_EXPECTED_OUTCOMES"/>
+        </changeSet>
+        <changeSet id="201709150858" author="moamen">
+            <createSequence sequenceName="SEQ_ROLE"/>
+        </changeSet>
+         <changeSet id="201709150859" author="moamen">
+            <createSequence sequenceName="SEQ_DOCS"/>
+        </changeSet>
+        <!--sequences end-->
+        <!--tables begin-->
 	<changeSet id="201709150541" author="abdelrhman">
 		<createTable tableName="PROJECT_TYPES">
 			<column name="ID" type="bigint" />
@@ -499,5 +511,4 @@
             </addColumn>
         </changeSet>
         <!--modifications end-->
->>>>>>> branch 'master' of https://github.com/abdelrhmanTanga/ResearchProject.git
 </databaseChangeLog>

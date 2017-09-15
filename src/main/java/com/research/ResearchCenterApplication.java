@@ -1,5 +1,4 @@
 package com.research;
-
 import java.beans.PropertyVetoException;
 import java.util.Properties;
 
