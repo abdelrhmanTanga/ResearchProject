@@ -7,18 +7,12 @@ package com.research.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Date;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -45,25 +39,9 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Employee.findByPosition", query = "SELECT e FROM Employee e WHERE e.position = :position")
     , @NamedQuery(name = "Employee.findByCenter", query = "SELECT e FROM Employee e WHERE e.center = :center")
     , @NamedQuery(name = "Employee.findBySerialNumber", query = "SELECT e FROM Employee e WHERE e.serialNumber = :serialNumber")})
-public class Employee implements Serializable {
+public class Employee extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "id")
-    private Long id;
-    @Column(name = "create_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createDate;
-    @Column(name = "modify_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date modifyDate;
-    @Column(name = "retire_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date retireDate;
-    @Column(name = "retired")
-    private Short retired;
     @Size(max = 255)
     @Column(name = "name")
     private String name;
@@ -94,50 +72,7 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
-    public Date getModifyDate() {
-        return modifyDate;
-    }
-
-    public void setModifyDate(Date modifyDate) {
-        this.modifyDate = modifyDate;
-    }
-
-    public Date getRetireDate() {
-        return retireDate;
-    }
-
-    public void setRetireDate(Date retireDate) {
-        this.retireDate = retireDate;
-    }
-
-    public Short getRetired() {
-        return retired;
-    }
-
-    public void setRetired(Short retired) {
-        this.retired = retired;
-    }
-
+    
     public String getName() {
         return name;
     }
@@ -211,29 +146,8 @@ public class Employee implements Serializable {
         this.projectEmployeesCollection = projectEmployeesCollection;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Employee)) {
-            return false;
-        }
-        Employee other = (Employee) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
 
-    @Override
-    public String toString() {
-        return "com.mycompany.cassandrarest.Employee[ id=" + id + " ]";
-    }
+	
     
 }

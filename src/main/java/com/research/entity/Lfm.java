@@ -7,11 +7,8 @@ package com.research.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Date;
-import javax.persistence.Basic;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -38,25 +35,10 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Lfm.findByModifyDate", query = "SELECT l FROM Lfm l WHERE l.modifyDate = :modifyDate")
     , @NamedQuery(name = "Lfm.findByRetireDate", query = "SELECT l FROM Lfm l WHERE l.retireDate = :retireDate")
     , @NamedQuery(name = "Lfm.findByRetired", query = "SELECT l FROM Lfm l WHERE l.retired = :retired")})
-public class Lfm implements Serializable {
+public class Lfm extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "id")
-    private Long id;
-    @Column(name = "create_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createDate;
-    @Column(name = "modify_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date modifyDate;
-    @Column(name = "retire_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date retireDate;
-    @Column(name = "retired")
-    private Short retired;
+    
     @JoinColumn(name = "project_id", referencedColumnName = "id")
     @ManyToOne
     private Project projectId;
@@ -66,50 +48,7 @@ public class Lfm implements Serializable {
     public Lfm() {
     }
 
-    public Lfm(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
-    public Date getModifyDate() {
-        return modifyDate;
-    }
-
-    public void setModifyDate(Date modifyDate) {
-        this.modifyDate = modifyDate;
-    }
-
-    public Date getRetireDate() {
-        return retireDate;
-    }
-
-    public void setRetireDate(Date retireDate) {
-        this.retireDate = retireDate;
-    }
-
-    public Short getRetired() {
-        return retired;
-    }
-
-    public void setRetired(Short retired) {
-        this.retired = retired;
-    }
-
+   
     public Project getProjectId() {
         return projectId;
     }
@@ -127,25 +66,8 @@ public class Lfm implements Serializable {
         this.tasksCollection = tasksCollection;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Lfm)) {
-            return false;
-        }
-        Lfm other = (Lfm) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+
 
     @Override
     public String toString() {

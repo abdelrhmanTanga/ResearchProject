@@ -43,28 +43,9 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Tasks.findByStartDate", query = "SELECT t FROM Tasks t WHERE t.startDate = :startDate")
     , @NamedQuery(name = "Tasks.findByEndDate", query = "SELECT t FROM Tasks t WHERE t.endDate = :endDate")
     , @NamedQuery(name = "Tasks.findByDuration", query = "SELECT t FROM Tasks t WHERE t.duration = :duration")})
-public class Tasks implements Serializable {
+public class Tasks extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "id")
-    private Long id;
-    @Size(max = 255)
-    @Column(name = "name")
-    private String name;
-    @Column(name = "create_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createDate;
-    @Column(name = "modify_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date modifyDate;
-    @Column(name = "retire_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date retireDate;
-    @Column(name = "retired")
-    private Short retired;
     @Column(name = "start_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date startDate;
@@ -81,59 +62,6 @@ public class Tasks implements Serializable {
 
     public Tasks() {
     }
-
-    public Tasks(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
-    public Date getModifyDate() {
-        return modifyDate;
-    }
-
-    public void setModifyDate(Date modifyDate) {
-        this.modifyDate = modifyDate;
-    }
-
-    public Date getRetireDate() {
-        return retireDate;
-    }
-
-    public void setRetireDate(Date retireDate) {
-        this.retireDate = retireDate;
-    }
-
-    public Short getRetired() {
-        return retired;
-    }
-
-    public void setRetired(Short retired) {
-        this.retired = retired;
-    }
-
     public Date getStartDate() {
         return startDate;
     }

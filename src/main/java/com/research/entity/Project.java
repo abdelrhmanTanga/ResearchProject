@@ -45,25 +45,10 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Project.findByBudget", query = "SELECT p FROM Project p WHERE p.budget = :budget")
     , @NamedQuery(name = "Project.findBySubmissionDate", query = "SELECT p FROM Project p WHERE p.submissionDate = :submissionDate")
     , @NamedQuery(name = "Project.findByAbbreviation", query = "SELECT p FROM Project p WHERE p.abbreviation = :abbreviation")})
-public class Project implements Serializable {
+public class Project extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "id")
-    private Long id;
-    @Column(name = "create_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createDate;
-    @Column(name = "modify_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date modifyDate;
-    @Column(name = "retire_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date retireDate;
-    @Column(name = "retired")
-    private Short retired;
+
     @Size(max = 255)
     @Column(name = "title")
     private String title;
@@ -95,51 +80,7 @@ public class Project implements Serializable {
     public Project() {
     }
 
-    public Project(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
-    public Date getModifyDate() {
-        return modifyDate;
-    }
-
-    public void setModifyDate(Date modifyDate) {
-        this.modifyDate = modifyDate;
-    }
-
-    public Date getRetireDate() {
-        return retireDate;
-    }
-
-    public void setRetireDate(Date retireDate) {
-        this.retireDate = retireDate;
-    }
-
-    public Short getRetired() {
-        return retired;
-    }
-
-    public void setRetired(Short retired) {
-        this.retired = retired;
-    }
-
-    public String getTitle() {
+      public String getTitle() {
         return title;
     }
 
