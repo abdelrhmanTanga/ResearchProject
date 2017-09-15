@@ -7,13 +7,19 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.research.dto.ProjectDto;
+
 @RestController
-@CrossOrigin
-public class test {
+@CrossOrigin("${angular.url}")
+@RequestMapping("/project")
+public class ProjectController {
 	
 	@CrossOrigin
-	@RequestMapping(path = "test")
+	@RequestMapping(path = "/selectOne")
 	public ResponseEntity<?> sayHello() {
-return new ResponseEntity<String>("{name:test}",HttpStatus.OK);
+		ProjectDto projectDto=new ProjectDto();
+		projectDto.setTitle("title");
+		projectDto.setType("type");
+return new ResponseEntity<ProjectDto>(projectDto,HttpStatus.OK);
 	}
 }
