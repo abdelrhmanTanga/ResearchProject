@@ -4,7 +4,8 @@
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
    http://www.liquibase.org/xml/ns/dbchangelog 
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
-
+       
+        <!--sequences begin-->
 	<changeSet id="201705150542" author="abdelrhman">
 		<createSequence sequenceName="SEQ_PROJECT_ROLE" />
 	</changeSet>
@@ -32,7 +33,18 @@
 	<changeSet id="20170915050" author="abdelrhman">
 		<createSequence sequenceName="SEQ_EMPLOYEE_ROLE" />
 	</changeSet>
-
+        
+        <changeSet id="201709150853" author="moamen">
+            <createSequence sequenceName="SEQ_TASKS_EXPECTED_OUTCOMES"/>
+        </changeSet>
+        <changeSet id="201709150858" author="moamen">
+            <createSequence sequenceName="SEQ_ROLE"/>
+        </changeSet>
+         <changeSet id="201709150859" author="moamen">
+            <createSequence sequenceName="SEQ_DOCS"/>
+        </changeSet>
+        <!--sequences end-->
+        <!--tables begin-->
 	<changeSet id="201709150541" author="abdelrhman">
 		<createTable tableName="PROJECT_TYPES">
 			<column name="ID" type="bigint" />
@@ -237,4 +249,13 @@
 			referencedTableName="TASKS" baseColumnNames="TASK_ID" baseTableName="TASKS_EXPECTED_OUTCOMES"
 			referencedColumnNames="ID" />
 	</changeSet>
+        <!-- tables end-->
+        
+        <!-- modifications begin-->
+        <changeSet id="201709150845" author="moamen">
+            <addColumn tableName="PROJECT">
+                <column name="ABBREVIATION" type="VARCHAR(255)" afterColumn="TITLE"/>
+            </addColumn>
+        </changeSet>
+        <!--modifications end-->
 </databaseChangeLog>
