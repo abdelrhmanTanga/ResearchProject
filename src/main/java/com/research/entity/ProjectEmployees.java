@@ -40,25 +40,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "ProjectEmployees.findByParticipation", query = "SELECT p FROM ProjectEmployees p WHERE p.participation = :participation")
     , @NamedQuery(name = "ProjectEmployees.findByMonths", query = "SELECT p FROM ProjectEmployees p WHERE p.months = :months")
     , @NamedQuery(name = "ProjectEmployees.findByBonus", query = "SELECT p FROM ProjectEmployees p WHERE p.bonus = :bonus")})
-public class ProjectEmployees implements Serializable {
+public class ProjectEmployees extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "id")
-    private Long id;
-    @Column(name = "create_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createDate;
-    @Column(name = "modify_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date modifyDate;
-    @Column(name = "retire_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date retireDate;
-    @Column(name = "retired")
-    private Short retired;
+    
     @Size(max = 255)
     @Column(name = "role")
     private String role;
@@ -79,51 +64,7 @@ public class ProjectEmployees implements Serializable {
     public ProjectEmployees() {
     }
 
-    public ProjectEmployees(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
-    public Date getModifyDate() {
-        return modifyDate;
-    }
-
-    public void setModifyDate(Date modifyDate) {
-        this.modifyDate = modifyDate;
-    }
-
-    public Date getRetireDate() {
-        return retireDate;
-    }
-
-    public void setRetireDate(Date retireDate) {
-        this.retireDate = retireDate;
-    }
-
-    public Short getRetired() {
-        return retired;
-    }
-
-    public void setRetired(Short retired) {
-        this.retired = retired;
-    }
-
-    public String getRole() {
+        public String getRole() {
         return role;
     }
 
