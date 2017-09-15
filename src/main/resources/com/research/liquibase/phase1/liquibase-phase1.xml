@@ -147,7 +147,7 @@
 		</createTable>
 
 		<addPrimaryKey constraintName="SYS_USER_ROLE_PK"
-			columnNames="ID" tableName="SYS_USER_ROLE" />
+			columnNames="ID" tableName="SYS_USER_ROLES" />
 		<addForeignKeyConstraint constraintName="SYS_USER_USERID_FK"
 			referencedTableName="SYS_USER" baseColumnNames="USER_ID"
 			baseTableName="SYS_USER_ROLES" referencedColumnNames="ID" />
@@ -196,7 +196,7 @@
 			tableName="DOCS" />
 		<addForeignKeyConstraint constraintName="DOCS_PROJECT_FK"
 			referencedTableName="PROJECT" baseColumnNames="PROJECT_ID"
-			baseTableName="DOCS" referencedColumnNames="PROJECT_ID" />
+			baseTableName="DOCS" referencedColumnNames="ID" />
 	</changeSet>
 
 	<changeSet id="201709150720" author="abdelrhman">

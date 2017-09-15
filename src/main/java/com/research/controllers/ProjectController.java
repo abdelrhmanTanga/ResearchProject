@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.research.dto.ProjectDto;
 
 @RestController
-@CrossOrigin("${angular.url}")
+//@CrossOrigin("${angular.url}")
 @RequestMapping("/project")
 public class ProjectController {
 
