@@ -1,5 +1,5 @@
 package com.research.dto;
 
-public class test {
+public class BaseDto {
 
 }
