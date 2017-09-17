@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Docs.findByRetired", query = "SELECT d FROM Docs d WHERE d.retired = :retired")
     , @NamedQuery(name = "Docs.findByDocPath", query = "SELECT d FROM Docs d WHERE d.docPath = :docPath")
     , @NamedQuery(name = "Docs.findByIsUploaded", query = "SELECT d FROM Docs d WHERE d.isUploaded = :isUploaded")})
-public class Docs implements Serializable {
+public class Docs extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

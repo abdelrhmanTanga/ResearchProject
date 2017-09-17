@@ -3,26 +3,34 @@ package com.research.service;
 import java.io.Serializable;
 import java.util.List;
 
-public class BaseServiceImpl<T, E, ID extends Serializable> {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.research.entity.BaseEntity;
+import com.research.repositories.BaseRepository;
+
+public abstract class BaseServiceImpl<T, ID extends Serializable> implements BaseService<T, Serializable>{
+
+	@Autowired
+	private BaseRepository<T,ID> baseRepository;
 	
-	public T get(){
-		return null;
+	public List<T> findAll(){
+		return baseRepository.findAll();
 	}
 	
-	public List<T> getAll(Long id){
-		return null;
+	public T findOne(Long id){
+		return baseRepository.findOne(id);
 	}
 	
-	public T update(E dto){
-		return null;
+	public T update(T entity){
+		return baseRepository.save(entity);
 	}
 	
-	public T insert(E dto){
-		return null;
+	public T insert(T entity){
+		return baseRepository.save(entity);
 	}
 	
-	public void delete(E dto){
-		
+	public void delete(Long id){
+		baseRepository.retireById(id);
 	}
 }

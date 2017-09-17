@@ -29,23 +29,23 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "role")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Role.findAll", query = "SELECT r FROM Role r")
-    , @NamedQuery(name = "Role.findById", query = "SELECT r FROM Role r WHERE r.id = :id")
-    , @NamedQuery(name = "Role.findByCreateDate", query = "SELECT r FROM Role r WHERE r.createDate = :createDate")
-    , @NamedQuery(name = "Role.findByModifyDate", query = "SELECT r FROM Role r WHERE r.modifyDate = :modifyDate")
-    , @NamedQuery(name = "Role.findByRetireDate", query = "SELECT r FROM Role r WHERE r.retireDate = :retireDate")
-    , @NamedQuery(name = "Role.findByRetired", query = "SELECT r FROM Role r WHERE r.retired = :retired")
-    , @NamedQuery(name = "Role.findByRole", query = "SELECT r FROM Role r WHERE r.role = :role")
-    , @NamedQuery(name = "Role.findByDescription", query = "SELECT r FROM Role r WHERE r.description = :description")})
+//@XmlRootElement
+//@NamedQueries({
+//    @NamedQuery(name = "Role.findAll", query = "SELECT r FROM Role r")
+//    , @NamedQuery(name = "Role.findById", query = "SELECT r FROM Role r WHERE r.id = :id")
+//    , @NamedQuery(name = "Role.findByCreateDate", query = "SELECT r FROM Role r WHERE r.createDate = :createDate")
+//    , @NamedQuery(name = "Role.findByModifyDate", query = "SELECT r FROM Role r WHERE r.modifyDate = :modifyDate")
+//    , @NamedQuery(name = "Role.findByRetireDate", query = "SELECT r FROM Role r WHERE r.retireDate = :retireDate")
+//    , @NamedQuery(name = "Role.findByRetired", query = "SELECT r FROM Role r WHERE r.retired = :retired")
+//    , @NamedQuery(name = "Role.findByRole", query = "SELECT r FROM Role r WHERE r.role = :role")
+//    , @NamedQuery(name = "Role.findByDescription", query = "SELECT r FROM Role r WHERE r.description = :description")})
 public class Role extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @NotNull
-    
+//    @Id
+//    @Basic(optional = false)
+//    @NotNull
+//    
     @Size(max = 255)
     @Column(name = "role")
     private String role;

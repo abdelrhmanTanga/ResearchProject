@@ -31,18 +31,18 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "tasks")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Tasks.findAll", query = "SELECT t FROM Tasks t")
-    , @NamedQuery(name = "Tasks.findById", query = "SELECT t FROM Tasks t WHERE t.id = :id")
-    , @NamedQuery(name = "Tasks.findByName", query = "SELECT t FROM Tasks t WHERE t.name = :name")
-    , @NamedQuery(name = "Tasks.findByCreateDate", query = "SELECT t FROM Tasks t WHERE t.createDate = :createDate")
-    , @NamedQuery(name = "Tasks.findByModifyDate", query = "SELECT t FROM Tasks t WHERE t.modifyDate = :modifyDate")
-    , @NamedQuery(name = "Tasks.findByRetireDate", query = "SELECT t FROM Tasks t WHERE t.retireDate = :retireDate")
-    , @NamedQuery(name = "Tasks.findByRetired", query = "SELECT t FROM Tasks t WHERE t.retired = :retired")
-    , @NamedQuery(name = "Tasks.findByStartDate", query = "SELECT t FROM Tasks t WHERE t.startDate = :startDate")
-    , @NamedQuery(name = "Tasks.findByEndDate", query = "SELECT t FROM Tasks t WHERE t.endDate = :endDate")
-    , @NamedQuery(name = "Tasks.findByDuration", query = "SELECT t FROM Tasks t WHERE t.duration = :duration")})
+//@XmlRootElement
+//@NamedQueries({
+//    @NamedQuery(name = "Tasks.findAll", query = "SELECT t FROM Tasks t")
+//    , @NamedQuery(name = "Tasks.findById", query = "SELECT t FROM Tasks t WHERE t.id = :id")
+//    , @NamedQuery(name = "Tasks.findByName", query = "SELECT t FROM Tasks t WHERE t.name = :name")
+//    , @NamedQuery(name = "Tasks.findByCreateDate", query = "SELECT t FROM Tasks t WHERE t.createDate = :createDate")
+//    , @NamedQuery(name = "Tasks.findByModifyDate", query = "SELECT t FROM Tasks t WHERE t.modifyDate = :modifyDate")
+//    , @NamedQuery(name = "Tasks.findByRetireDate", query = "SELECT t FROM Tasks t WHERE t.retireDate = :retireDate")
+//    , @NamedQuery(name = "Tasks.findByRetired", query = "SELECT t FROM Tasks t WHERE t.retired = :retired")
+//    , @NamedQuery(name = "Tasks.findByStartDate", query = "SELECT t FROM Tasks t WHERE t.startDate = :startDate")
+//    , @NamedQuery(name = "Tasks.findByEndDate", query = "SELECT t FROM Tasks t WHERE t.endDate = :endDate")
+//    , @NamedQuery(name = "Tasks.findByDuration", query = "SELECT t FROM Tasks t WHERE t.duration = :duration")})
 public class Tasks extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

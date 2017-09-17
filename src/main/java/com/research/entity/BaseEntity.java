@@ -5,10 +5,12 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+@MappedSuperclass
 public abstract class BaseEntity {
     @Id
     @Basic(optional = false)
@@ -25,7 +27,7 @@ public abstract class BaseEntity {
     @Temporal(TemporalType.TIMESTAMP)
     protected Date retireDate;
     @Column(name = "retired")
-    protected Short retired;
+    protected Boolean retired;
 	public Long getId() {
 		return id;
 	}
@@ -50,10 +52,10 @@ public abstract class BaseEntity {
 	public void setRetireDate(Date retireDate) {
 		this.retireDate = retireDate;
 	}
-	public Short getRetired() {
+	public Boolean getRetired() {
 		return retired;
 	}
-	public void setRetired(Short retired) {
+	public void setRetired(Boolean retired) {
 		this.retired = retired;
 	}
     
