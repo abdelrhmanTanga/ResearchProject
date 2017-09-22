@@ -1,20 +1,30 @@
 package com.research.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Where;
+
 @MappedSuperclass
-public abstract class BaseEntity {
-    @Id
+@Where(clause="retired<>1")
+public abstract class BaseEntity implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @Basic(optional = false)
-    @NotNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     protected Long id;
     @Column(name = "create_date")
@@ -27,7 +37,7 @@ public abstract class BaseEntity {
     @Temporal(TemporalType.TIMESTAMP)
     protected Date retireDate;
     @Column(name = "retired")
-    protected Boolean retired;
+    protected short retired;
 	public Long getId() {
 		return id;
 	}
@@ -52,11 +62,12 @@ public abstract class BaseEntity {
 	public void setRetireDate(Date retireDate) {
 		this.retireDate = retireDate;
 	}
-	public Boolean getRetired() {
+	public short getRetired() {
 		return retired;
 	}
-	public void setRetired(Boolean retired) {
+	public void setRetired(short retired) {
 		this.retired = retired;
 	}
+	
     
 }
