@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -39,6 +40,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Employee.findByPosition", query = "SELECT e FROM Employee e WHERE e.position = :position")
     , @NamedQuery(name = "Employee.findByCenter", query = "SELECT e FROM Employee e WHERE e.center = :center")
     , @NamedQuery(name = "Employee.findBySerialNumber", query = "SELECT e FROM Employee e WHERE e.serialNumber = :serialNumber")})
+@SequenceGenerator(name="SEQ",allocationSize=1,sequenceName="SEQ_PROJECT")
 public class Employee extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

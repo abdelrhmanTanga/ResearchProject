@@ -14,6 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -25,6 +26,7 @@ import javax.xml.bind.annotation.XmlTransient;
  *
  * @author Sheko
  */
+@SequenceGenerator(name="SEQ",allocationSize=1,sequenceName="SEQ_PROJECT")
 @Entity
 @Table(name = "lfm")
 @XmlRootElement
