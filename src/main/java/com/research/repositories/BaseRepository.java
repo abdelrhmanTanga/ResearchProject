@@ -28,18 +28,18 @@ public interface BaseRepository<T extends BaseEntity> extends PagingAndSortingRe
 		T e = findOne(id);
 		if(e==null)
 			throw new BusinessException("entity is null",HttpStatus.BAD_REQUEST, -1);
-		e.setRetired((short)1);
+		e.setRetired(true);
 		save(e);
 	}
 
 	public default void softDelete(T e) {
-		e.setRetired((short)1);
+		e.setRetired(true);
 		save(e);
 	}
 
 	public default void softDelete(Iterable<T> list) {
 
-		list.forEach(e -> e.setRetired((short)1));
+		list.forEach(e -> e.setRetired(true));
 		save(list);
 	}
 }
