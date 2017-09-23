@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -24,8 +26,8 @@ public abstract class BaseEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
     @Basic(optional = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="SEQ")
     protected Long id;
     @Column(name = "create_date")
     @Temporal(TemporalType.TIMESTAMP)

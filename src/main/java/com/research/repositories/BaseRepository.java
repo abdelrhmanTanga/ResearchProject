@@ -6,8 +6,10 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.http.HttpStatus;
 
 import com.research.entity.BaseEntity;
+import com.research.exception.BusinessException;
 
 @NoRepositoryBean
 public interface BaseRepository<T extends BaseEntity> extends PagingAndSortingRepository<T, Long> {
@@ -24,6 +26,8 @@ public interface BaseRepository<T extends BaseEntity> extends PagingAndSortingRe
 	public default void softDelete(Long id) {
 
 		T e = findOne(id);
+		if(e==null)
+			throw new BusinessException("entity is null",HttpStatus.BAD_REQUEST, -1);
 		e.setRetired((short)1);
 		save(e);
 	}

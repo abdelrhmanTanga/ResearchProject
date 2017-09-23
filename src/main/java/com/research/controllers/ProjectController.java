@@ -37,8 +37,8 @@ ProjectService projectService;
 	@RequestMapping("getall")
 	public ResponseEntity<?> getAll() {
 
-		List<ProjectDto> projectDtos = new ArrayList<>();
-		return new ResponseEntity<List<ProjectDto>>(projectDtos, HttpStatus.OK);
+		
+		return new ResponseEntity<List<ProjectDto>>(projectService.getAllProjects(), HttpStatus.OK);
 	}
 
 	@RequestMapping(path = "add", method = RequestMethod.POST)
