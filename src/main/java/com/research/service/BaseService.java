@@ -3,15 +3,23 @@ package com.research.service;
 import java.io.Serializable;
 import java.util.List;
 
-public interface BaseService<T, ID extends Serializable> {
-//
-//	public List<T> getAll();
-//	
-//	public T get(ID id);
-//	
-//	public T insert(E dto);
-//	
-//	public T update(E dto);
-//	
-//	public void delete(E dto);
+import com.research.entity.BaseEntity;
+import com.research.repositories.BaseRepository;
+
+public interface BaseService<T extends BaseEntity> {
+
+	public List<T> getAll();
+
+	T save(T entity);
+
+	T update(T entity);
+
+	T getOne(Long id);
+
+	void delete(Long id);
+	void delete(T entity);
+	void delete(Iterable<T> list);
+
+	public BaseRepository getBaseRepo();
+
 }

@@ -65,6 +65,8 @@ public class LiquibaseConfigurer {
 		properties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("database.hibernate.hbm2ddl.auto"));
 		properties.setProperty("hibernate.dialect", env.getProperty("database.hibernate.dialect"));
 		properties.setProperty("hibernate.show_sql", env.getProperty("database.hibernate.show_sql"));
+		properties.setProperty("hibernate.default_schema","research_center");
+		
 		return properties;
 	}
 
