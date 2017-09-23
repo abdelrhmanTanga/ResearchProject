@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlTransient;
  *
  * @author Sheko
  */
-@SequenceGenerator(name="SEQ",allocationSize=1,sequenceName="SEQ_PROJECT")
+@SequenceGenerator(name="SEQ",allocationSize=1,sequenceName="SEQ_PROJECT_TYPE")
 @Entity
 @Table(name = "project_types")
 @XmlRootElement
