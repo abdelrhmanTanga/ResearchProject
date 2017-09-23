@@ -15,6 +15,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Type;
 import org.hibernate.annotations.Where;
 
 @MappedSuperclass
@@ -38,8 +39,9 @@ public abstract class BaseEntity implements Serializable {
     @Column(name = "retire_date")
     @Temporal(TemporalType.TIMESTAMP)
     protected Date retireDate;
-    @Column(name = "retired")
-    protected short retired;
+    @Column(name = "retired", columnDefinition = "SMALLINT default 0")
+    @Type(type = "org.hibernate.type.NumericBooleanType")
+    protected boolean retired;
 	public Long getId() {
 		return id;
 	}
@@ -64,12 +66,11 @@ public abstract class BaseEntity implements Serializable {
 	public void setRetireDate(Date retireDate) {
 		this.retireDate = retireDate;
 	}
-	public short getRetired() {
+	public boolean isRetired() {
 		return retired;
 	}
-	public void setRetired(short retired) {
+	public void setRetired(boolean retired) {
 		this.retired = retired;
 	}
 	
-    
 }
