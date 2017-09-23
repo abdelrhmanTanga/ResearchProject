@@ -1,6 +1,11 @@
 package com.research.dto;
 
 public class ProjectTypeDto extends BaseDto {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private String type;
 
 	private String description;
