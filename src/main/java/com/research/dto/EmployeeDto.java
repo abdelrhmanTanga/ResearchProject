@@ -1,8 +1,8 @@
 package com.research.dto;
 
 public class EmployeeDto extends BaseDto {
+	private static final long serialVersionUID = 1L;
 
-	private Long id;
 	private String name;
 	private String comments;
 	private String criminalStatus;
@@ -12,13 +12,7 @@ public class EmployeeDto extends BaseDto {
 	private String center;
 	private String serialNumber;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 
 	public String getName() {
 		return name;
