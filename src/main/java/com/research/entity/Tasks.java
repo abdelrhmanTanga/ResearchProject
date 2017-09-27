@@ -56,7 +56,9 @@ public class Tasks extends BaseEntity implements Serializable {
     private Date endDate;
     @Column(name = "duration")
     private Integer duration;
-    @OneToMany(mappedBy = "taskId")
+    @Column(name = "name")
+    private String name;
+	@OneToMany(mappedBy = "taskId")
     private Collection<TasksExpectedOutcomes> tasksExpectedOutcomesCollection;
     @JoinColumn(name = "lfm_id", referencedColumnName = "id")
     @ManyToOne
@@ -104,6 +106,15 @@ public class Tasks extends BaseEntity implements Serializable {
     public void setLfmId(Lfm lfmId) {
         this.lfmId = lfmId;
     }
+    
+    public String getName() {
+		return name;
+	}
+    
+	public void setName(String name) {
+		this.name = name;
+	}
+
 
     @Override
     public int hashCode() {
