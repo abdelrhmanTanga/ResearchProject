@@ -13,9 +13,10 @@ import org.springframework.context.annotation.Configuration;
 public class DozerConfig {
 	@Bean
 	public DozerBeanMapper dozerBeanMapper() {
-		
-		  DozerBeanMapper dozerBean = new DozerBeanMapper();
-	        dozerBean.setMappingFiles(Arrays.<String>asList("Mapping/ProjectMapping.xml","Mapping/ProjectTypeMapping.xml"));
-	        return dozerBean;
+
+		DozerBeanMapper dozerBean = new DozerBeanMapper();
+		dozerBean.setMappingFiles(Arrays.<String>asList("Mapping/ProjectMapping.xml", "Mapping/ProjectTypeMapping.xml",
+				"Mapping/LFMMapping.xml"));
+		return dozerBean;
 	}
 }
