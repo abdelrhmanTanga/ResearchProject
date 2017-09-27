@@ -23,6 +23,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  *
  * @author Sheko
@@ -45,6 +47,7 @@ public class TasksExpectedOutcomes extends BaseEntity implements Serializable {
     @Size(max = 255)
     @Column(name = "expectation")
     private String expectation;
+    @JsonIgnore
     @JoinColumn(name = "task_id", referencedColumnName = "id")
     @ManyToOne
     private Tasks taskId;

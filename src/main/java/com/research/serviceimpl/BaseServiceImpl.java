@@ -45,7 +45,12 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 	@Override
 	public T getOne(Long id) {
 		// TODO Auto-generated method stub
-		return (T) checkBaseRepo().findOne(id);
+		
+		T returnObject= (T) checkBaseRepo().findOne(id);
+		if(returnObject==null)
+			throw new BusinessException("object not found", HttpStatus.BAD_REQUEST,-1);
+		return returnObject;
+			
 	}
 
 	@Override
@@ -66,11 +71,9 @@ public abstract class BaseServiceImpl<T extends BaseEntity> implements BaseServi
 		// TODO Auto-generated method stub
 		checkBaseRepo().softDelete(entity);
 	}
-
 	@Override
 	public void delete(Iterable<T> list) {
 		// TODO Auto-generated method stub
 		checkBaseRepo().softDelete(list);
 	}
-
 }

@@ -43,6 +43,10 @@
 	<changeSet id="201709150859" author="moamen">
 		<createSequence sequenceName="SEQ_DOCS" />
 	</changeSet>
+	
+		<changeSet id="201723090354" author="sherif">
+		<createSequence sequenceName="SEQ_PROJECT_TYPE" />
+	</changeSet>
 	<!--sequences end -->
 	<!--tables begin -->
 	<changeSet id="201709150541" author="abdelrhman">
@@ -258,4 +262,6 @@
 		</addColumn>
 	</changeSet>
 	<!--modifications end -->
+	
+	
 </databaseChangeLog>

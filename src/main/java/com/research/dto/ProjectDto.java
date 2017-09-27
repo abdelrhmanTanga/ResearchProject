@@ -4,7 +4,11 @@ import java.util.Date;
 
 public class ProjectDto extends BaseDto {
 
-	private Long id;
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String title;
 	private String type;
 	private String applicantName;
@@ -12,6 +16,15 @@ public class ProjectDto extends BaseDto {
 	private Date submissionDate;
 	private Double budget;
 	private String abbreviation;
+	private Long ProjectTypeId;
+	
+	public Long getProjectTypeId() {
+		return ProjectTypeId;
+	}
+
+	public void setProjectTypeId(Long projectTypeId) {
+		ProjectTypeId = projectTypeId;
+	}
 
 	public String getAbbreviation() {
 		return abbreviation;
@@ -21,13 +34,13 @@ public class ProjectDto extends BaseDto {
 		this.abbreviation = abbreviation;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+//	public Long getId() {
+//		return id;
+//	}
+//
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
 
 	public String getTitle() {
 		return title;

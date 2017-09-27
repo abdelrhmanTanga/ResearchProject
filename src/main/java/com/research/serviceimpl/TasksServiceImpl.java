@@ -12,19 +12,30 @@ import com.research.entity.Tasks;
 import com.research.repositories.BaseRepository;
 import com.research.repositories.project.TasksRepository;
 import com.research.service.TasksService;
+import java.util.ArrayList;
+import java.util.List;
 
-@Service
-public class TasksServiceImpl extends BaseServiceImpl<Tasks> implements TasksService{
+import org.dozer.DozerBeanMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.research.dto.TasksDto;
+import com.research.entity.Tasks;
+import com.research.repositories.BaseRepository;
+import com.research.repositories.TaskRepo;
+import com.research.service.TasksService;
+
+public class TasksServiceImpl extends BaseServiceImpl<Tasks> implements TasksService {
 
 	@Autowired
-	private TasksRepository tasksRepository;
-	
-//	@Autowired
-//	private 
-	
+	TaskRepo taskRepo;
+	@Autowired
+	DozerBeanMapper mapper;
+
+	@SuppressWarnings("rawtypes")
 	@Override
 	public BaseRepository getBaseRepo() {
-		return tasksRepository;
+		// TODO Auto-generated method stub
+		return taskRepo;
 	}
 
 	@Override
@@ -45,5 +56,23 @@ public class TasksServiceImpl extends BaseServiceImpl<Tasks> implements TasksSer
 		return taskDTO;
 	}
 
+	@Override
+	public List<TasksDto> getAllTasks() {
+		List<TasksDto> tasksDtos = new ArrayList<>();
+		mapper.map(getAll(), tasksDtos);
+		return tasksDtos;
+	}
+
+	@Override
+	public List<TasksDto> getTaskForProject(Long projectId) {
+		// TODO Auto-generated method stub
 	
+		return null;
+	}
+
+	@Override
+	public void deleteTask(Long taskId) {
+		// TODO Auto-generated method stub
+
+	}
 }

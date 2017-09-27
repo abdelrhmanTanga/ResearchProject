@@ -13,14 +13,18 @@ import com.research.entity.ProjectTypes;
 import com.research.repositories.BaseRepository;
 import com.research.repositories.ProjectRepo;
 import com.research.service.ProjectService;
+import com.research.service.ProjectTypeService;
 
 @Service
 public class ProjectServiceImpl extends BaseServiceImpl<Project> implements ProjectService {
 
 	@Autowired
+
 	ProjectRepo projectRepo;
 	@Autowired
 	DozerBeanMapper mapper;
+	@Autowired
+	ProjectTypeService projectTypeService;
 
 	@Override
 	public BaseRepository getBaseRepo() {
@@ -30,9 +34,9 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
 
 	@Override
 	public ProjectDto addProject(ProjectDto projectDto) {
-		// TODO Auto-generated method stub
-		Project project = mapper.map(projectDto, Project.class);
-		// project.setId(1L);
+		Project project = new Project();
+		mapper.map(projectDto, project);
+		project.setTypeId(projectTypeService.getOne(projectDto.getProjectTypeId()));
 		project = save(project);
 		return mapper.map(project, projectDto.getClass());
 	}
