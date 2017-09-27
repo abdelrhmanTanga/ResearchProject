@@ -1,7 +1,7 @@
 package com.research.dto;
 
 public class ProjectEmployeesDto extends BaseDto {
-	private long id;
+	
 	private String role;
 	private Float participation;
 	private Integer months;
@@ -9,13 +9,6 @@ public class ProjectEmployeesDto extends BaseDto {
 	private EmployeeDto employeeId;
 	private ProjectDto projectId;
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public String getRole() {
 		return role;

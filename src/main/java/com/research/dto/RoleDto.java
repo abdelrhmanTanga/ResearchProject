@@ -5,7 +5,7 @@ import java.util.Collection;
 import com.research.entity.SysUserRoles;
 
 public class RoleDto extends BaseDto {
-	private long id;
+	
 	private String role;
 	private String description;
 	private Collection<SysUserRoles> sysUserRolesCollection;
@@ -26,15 +26,7 @@ public class RoleDto extends BaseDto {
 		this.description = description;
 	}
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public Collection<SysUserRoles> getSysUserRolesCollection() {
+		public Collection<SysUserRoles> getSysUserRolesCollection() {
 		return sysUserRolesCollection;
 	}
 

@@ -34,15 +34,9 @@ public class ProjectServiceImpl extends BaseServiceImpl<Project> implements Proj
 
 	@Override
 	public ProjectDto addProject(ProjectDto projectDto) {
-		Project project = null;
-		try {
-			project = new Project();
-
-//			mapper.map(projectDto, project);
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		// project.setTypeId(projectTypeService.getOne(projectDto.getProjectTypeId()));
+		Project project = new Project();
+		mapper.map(projectDto, project);
+		project.setTypeId(projectTypeService.getOne(projectDto.getProjectTypeId()));
 		project = save(project);
 		return mapper.map(project, projectDto.getClass());
 	}
