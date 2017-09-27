@@ -11,4 +11,7 @@ public interface LFMService {
 	Lfm findOne(Long id);
 
 	LFMDto updateLFM(LFMDto lFMDto);
+
+	Lfm getLFMByProjectid(Long projectId);
+
 }

@@ -20,13 +20,14 @@ import java.util.List;
 
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.research.dto.TasksDto;
 import com.research.dto.TasksExpectedOutcomesDto;
 import com.research.entity.Tasks;
 import com.research.exception.BusinessException;
 import com.research.repositories.BaseRepository;
 import com.research.repositories.TaskRepo;
+import com.research.service.LFMService;
 import com.research.service.TasksService;
 
 @Service
@@ -40,6 +41,7 @@ public class TasksServiceImpl extends BaseServiceImpl<Tasks> implements TasksSer
 	private LFMService lfmService;
 	@Autowired
 	private TasksExpectedOutcomesService tasksOutcomesService;
+
 
 	@SuppressWarnings("rawtypes")
 	@Override
@@ -81,17 +83,19 @@ public class TasksServiceImpl extends BaseServiceImpl<Tasks> implements TasksSer
 	}
 
 	@Override
-	public List<TasksDto> getAllTasks() {
-		List<TasksDto> tasksDtos = new ArrayList<>();
+	public List<TaskDTO> getAllTasks() {
+		List<TaskDTO> tasksDtos = new ArrayList<>();
 		mapper.map(getAll(), tasksDtos);
 		return tasksDtos;
 	}
 
 	@Override
-	public List<TasksDto> getTaskForProject(Long projectId) {
+	public List<TaskDTO> getTaskForProject(Long projectId) {
 		// TODO Auto-generated method stub
-	
-		return null;
+		List<TaskDTO> tasksDtos = new ArrayList<>();
+		lfmService.getLFMByProjectid(projectId).getTasksCollection();
+		mapper.map(lfmService.getLFMByProjectid(projectId).getTasksCollection(), tasksDtos);
+		return tasksDtos;
 	}
 
 	@Override

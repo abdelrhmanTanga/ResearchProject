@@ -1,14 +1,13 @@
 package com.research.dto;
 
+import com.research.dto.project.TaskDTO;
+
 public class TasksExpectedOutcomesDto extends BaseDto {
 
 	private static final long serialVersionUID = 1L;
 	private String expectation;
-	private TasksDto taskId;
+	private TaskDTO taskId;
 	private Long taskIdLong;
-
-
-
 
 	public Long getTaskIdLong() {
 		return taskIdLong;
@@ -24,14 +23,6 @@ public class TasksExpectedOutcomesDto extends BaseDto {
 
 	public void setExpectation(String expectation) {
 		this.expectation = expectation;
-	}
-
-	public TasksDto getTaskId() {
-		return taskId;
-	}
-
-	public void setTaskId(TasksDto taskId) {
-		this.taskId = taskId;
 	}
 
 }
