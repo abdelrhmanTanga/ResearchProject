@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.research.dto.TasksDto;
+import com.research.dto.project.TaskDTO;
 import com.research.service.TasksService;
 
 @CrossOrigin("${angular.url}")
@@ -22,13 +22,14 @@ public class TasksController {
 	@Autowired
 	TasksService tasksService;
 
-@RequestMapping(path="add", method=RequestMethod.POST)
-	public ResponseEntity<?> addtask(@RequestBody TasksDto taskDto) {
-		return new ResponseEntity<TasksDto>(tasksService.addTask(taskDto), HttpStatus.OK);
+
+	public ResponseEntity<?> addtask(TaskDTO taskDto) {
+		return new ResponseEntity<TaskDTO>(tasksService.addTask(taskDto), HttpStatus.OK);
+
 	}
 	@RequestMapping(path="getAllForProject",method=RequestMethod.GET)
-	public ResponseEntity<List<TasksDto>> getAllTasksForProject(@RequestParam("id") Long projectId) {
+	public ResponseEntity<List<TaskDTO>> getAllTasksForProject(@RequestParam("id") Long projectId) {
 
-		return new ResponseEntity<List<TasksDto>>(tasksService.getTaskForProject(projectId), HttpStatus.OK);
+		return new ResponseEntity<List<TaskDTO>>(tasksService.getTaskForProject(projectId), HttpStatus.OK);
 	}
 }
