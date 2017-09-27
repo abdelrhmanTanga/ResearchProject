@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.research.dto.LFMDto;
 import com.research.entity.Lfm;
 import com.research.entity.Project;
+import com.research.exception.BusinessException;
 import com.research.repositories.BaseRepository;
 import com.research.repositories.LFMRepo;
 import com.research.service.LFMService;
@@ -24,8 +25,7 @@ public class LFMServiceImpl extends BaseServiceImpl<Lfm> implements LFMService {
 
 	@Override
 	public BaseRepository getBaseRepo() {
-		// TODO Auto-generated method stub
-		return null;
+		return lFMRepo;
 	}
 
 	@Override
@@ -43,11 +43,20 @@ public class LFMServiceImpl extends BaseServiceImpl<Lfm> implements LFMService {
 	}
 
 	@Override
-	public LFMDto getLFM() {
+	public LFMDto getLFM(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	
+	@Override
+	public Lfm findOne(Long id){
+		Lfm lfm = this.getOne(id);
+		if (lfm == null){
+			throw new BusinessException();
+		}
+		return lfm;
+	}
 	@Override
 	public LFMDto updateLFM(LFMDto lFMDto) {
 		// TODO Auto-generated method stub

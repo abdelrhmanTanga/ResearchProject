@@ -31,5 +31,9 @@ public class BusinessException extends RuntimeException{
 		this.ecode = ecode;
 	}
 	
+	public BusinessException(){
+		super();
+	}
+	
 
 }

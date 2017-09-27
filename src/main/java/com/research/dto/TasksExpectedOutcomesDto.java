@@ -5,9 +5,18 @@ public class TasksExpectedOutcomesDto extends BaseDto {
 	private static final long serialVersionUID = 1L;
 	private String expectation;
 	private TasksDto taskId;
+	private Long taskIdLong;
 
 
 
+
+	public Long getTaskIdLong() {
+		return taskIdLong;
+	}
+
+	public void setTaskIdLong(Long taskIdLong) {
+		this.taskIdLong = taskIdLong;
+	}
 
 	public String getExpectation() {
 		return expectation;

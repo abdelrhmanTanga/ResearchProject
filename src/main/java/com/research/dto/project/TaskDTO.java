@@ -1,9 +1,12 @@
 package com.research.dto.project;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.research.dto.BaseDto;
+import com.research.dto.TasksExpectedOutcomesDto;
 
 public class TaskDTO extends BaseDto implements Serializable{
 
@@ -17,7 +20,15 @@ public class TaskDTO extends BaseDto implements Serializable{
     private Integer duration;
     private Long lfmId;
     private String name;
+    private List<TasksExpectedOutcomesDto> taskExpectedOutcomes = new ArrayList<>();
     
+	public List<TasksExpectedOutcomesDto> getTaskExpectedOutcomes() {
+		return taskExpectedOutcomes;
+	}
+	public void setTaskExpectedOutcomes(
+			List<TasksExpectedOutcomesDto> taskExpectedOutcomes) {
+		this.taskExpectedOutcomes = taskExpectedOutcomes;
+	}
 	public String getName() {
 		return name;
 	}
