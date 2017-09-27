@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.dozer.DozerBeanMapper;
+import org.hibernate.loader.custom.Return;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import com.research.entity.Project;
 import com.research.repositories.BaseRepository;
 import com.research.repositories.LFMRepo;
 import com.research.service.LFMService;
+import com.research.service.ProjectService;
 
 @Service
 public class LFMServiceImpl extends BaseServiceImpl<Lfm> implements LFMService {
@@ -21,6 +23,8 @@ public class LFMServiceImpl extends BaseServiceImpl<Lfm> implements LFMService {
 	LFMRepo lFMRepo;
 	@Autowired
 	DozerBeanMapper mapper;
+	@Autowired
+	ProjectService projectService;
 
 	@Override
 	public BaseRepository getBaseRepo() {
@@ -52,6 +56,12 @@ public class LFMServiceImpl extends BaseServiceImpl<Lfm> implements LFMService {
 	public LFMDto updateLFM(LFMDto lFMDto) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Lfm getLFMByProjectid(Long projectId) {
+		return (Lfm) projectService.getOne(projectId).getLfmCollection().toArray()[0];
+
 	}
 
 }
