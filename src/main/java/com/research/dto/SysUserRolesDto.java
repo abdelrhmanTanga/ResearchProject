@@ -1,7 +1,9 @@
 package com.research.dto;
 
 public class SysUserRolesDto extends BaseDto {
-	
+
+	private static final long serialVersionUID = 1L;
+
 	private String name;
 	private RoleDto roleId;
 	private SysUserDto userId;

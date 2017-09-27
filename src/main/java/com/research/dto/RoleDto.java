@@ -5,7 +5,10 @@ import java.util.Collection;
 import com.research.entity.SysUserRoles;
 
 public class RoleDto extends BaseDto {
-	
+
+	private static final long serialVersionUID = 1L;
+
+
 	private String role;
 	private String description;
 	private Collection<SysUserRoles> sysUserRolesCollection;
@@ -26,7 +29,9 @@ public class RoleDto extends BaseDto {
 		this.description = description;
 	}
 
-		public Collection<SysUserRoles> getSysUserRolesCollection() {
+
+	public Collection<SysUserRoles> getSysUserRolesCollection() {
+
 		return sysUserRolesCollection;
 	}
 

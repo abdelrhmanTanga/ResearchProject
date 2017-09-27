@@ -5,13 +5,14 @@ import java.util.Collection;
 import com.research.entity.SysUserRoles;
 
 public class SysUserDto extends BaseDto {
-	
+
+	private static final long serialVersionUID = 1L;
+
+
 	private String userName;
 	private String password;
 
 	private Collection<SysUserRoles> sysUserRolesCollection;
-
-
 
 	public String getUserName() {
 		return userName;

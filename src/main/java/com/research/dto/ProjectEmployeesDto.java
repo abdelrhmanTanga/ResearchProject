@@ -1,14 +1,16 @@
 package com.research.dto;
 
 public class ProjectEmployeesDto extends BaseDto {
-	
+
+	private static final long serialVersionUID = 1L;
+
+
 	private String role;
 	private Float participation;
 	private Integer months;
 	private Double bonus;
 	private EmployeeDto employeeId;
 	private ProjectDto projectId;
-
 
 	public String getRole() {
 		return role;
