@@ -1,6 +1,6 @@
-package com.research.service;
+package com.research.service.project;
 
-import com.research.dto.LFMDto;
+import com.research.dto.project.LFMDto;
 import com.research.entity.Lfm;
 
 public interface LFMService {

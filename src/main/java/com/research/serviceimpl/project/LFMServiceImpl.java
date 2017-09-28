@@ -1,4 +1,4 @@
-package com.research.serviceimpl;
+package com.research.serviceimpl.project;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,14 +8,15 @@ import org.hibernate.loader.custom.Return;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.research.dto.LFMDto;
+import com.research.dto.project.LFMDto;
 import com.research.entity.Lfm;
 import com.research.entity.Project;
 import com.research.exception.BusinessException;
 import com.research.repositories.BaseRepository;
-import com.research.repositories.LFMRepo;
-import com.research.service.LFMService;
-import com.research.service.ProjectService;
+import com.research.repositories.project.LFMRepo;
+import com.research.service.project.LFMService;
+import com.research.service.project.ProjectService;
+import com.research.serviceimpl.BaseServiceImpl;
 
 @Service
 public class LFMServiceImpl extends BaseServiceImpl<Lfm> implements LFMService {

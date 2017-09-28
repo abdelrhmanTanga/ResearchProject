@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.research.dto.BaseDto;
-import com.research.dto.TasksExpectedOutcomesDto;
 
 public class TaskDTO extends BaseDto implements Serializable{
 

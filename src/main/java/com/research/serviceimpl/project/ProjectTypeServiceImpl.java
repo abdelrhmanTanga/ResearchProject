@@ -1,4 +1,4 @@
-package com.research.serviceimpl;
+package com.research.serviceimpl.project;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,11 +7,12 @@ import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.research.dto.ProjectTypeDto;
+import com.research.dto.project.ProjectTypeDto;
 import com.research.entity.ProjectTypes;
 import com.research.repositories.BaseRepository;
-import com.research.repositories.ProjectTypeRepo;
-import com.research.service.ProjectTypeService;
+import com.research.repositories.project.ProjectTypeRepo;
+import com.research.service.project.ProjectTypeService;
+import com.research.serviceimpl.BaseServiceImpl;
 @Service
 public class ProjectTypeServiceImpl extends BaseServiceImpl<ProjectTypes> implements ProjectTypeService {
 

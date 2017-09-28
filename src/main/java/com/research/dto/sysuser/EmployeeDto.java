@@ -1,4 +1,6 @@
-package com.research.dto;
+package com.research.dto.sysuser;
+
+import com.research.dto.BaseDto;
 
 public class EmployeeDto extends BaseDto {
 	private static final long serialVersionUID = 1L;

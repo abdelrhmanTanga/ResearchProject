@@ -1,4 +1,7 @@
-package com.research.dto;
+package com.research.dto.project;
+
+import com.research.dto.BaseDto;
+import com.research.dto.sysuser.EmployeeDto;
 
 public class ProjectEmployeesDto extends BaseDto {
 

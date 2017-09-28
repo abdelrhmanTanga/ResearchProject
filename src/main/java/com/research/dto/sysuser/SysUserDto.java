@@ -1,7 +1,8 @@
-package com.research.dto;
+package com.research.dto.sysuser;
 
 import java.util.Collection;
 
+import com.research.dto.BaseDto;
 import com.research.entity.SysUserRoles;
 
 public class SysUserDto extends BaseDto {

@@ -1,4 +1,6 @@
-package com.research.dto;
+package com.research.dto.project;
+
+import com.research.dto.BaseDto;
 
 public class ProjectTypeDto extends BaseDto {
 	/**

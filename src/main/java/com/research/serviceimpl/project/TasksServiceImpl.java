@@ -1,4 +1,4 @@
-package com.research.serviceimpl;
+package com.research.serviceimpl.project;
 
 import java.util.Date;
 
@@ -7,13 +7,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.research.dto.project.TaskDTO;
+import com.research.dto.project.TasksExpectedOutcomesDto;
 import com.research.entity.Lfm;
 import com.research.entity.Tasks;
 import com.research.repositories.BaseRepository;
+import com.research.repositories.project.TaskRepo;
 import com.research.repositories.project.TasksRepository;
-import com.research.service.LFMService;
-import com.research.service.TasksExpectedOutcomesService;
-import com.research.service.TasksService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +21,13 @@ import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.research.dto.TasksExpectedOutcomesDto;
 import com.research.entity.Tasks;
 import com.research.exception.BusinessException;
 import com.research.repositories.BaseRepository;
-import com.research.repositories.TaskRepo;
-import com.research.service.LFMService;
-import com.research.service.TasksService;
+import com.research.service.project.LFMService;
+import com.research.service.project.TasksExpectedOutcomesService;
+import com.research.service.project.TasksService;
+import com.research.serviceimpl.BaseServiceImpl;
 
 @Service
 public class TasksServiceImpl extends BaseServiceImpl<Tasks> implements TasksService {

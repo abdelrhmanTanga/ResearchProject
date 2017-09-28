@@ -1,4 +1,4 @@
-package com.research.serviceimpl;
+package com.research.serviceimpl.project;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,12 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.research.dto.TasksExpectedOutcomesDto;
+import com.research.dto.project.TasksExpectedOutcomesDto;
 import com.research.entity.Tasks;
 import com.research.entity.TasksExpectedOutcomes;
 import com.research.repositories.BaseRepository;
-import com.research.repositories.TasksExpectedOutcomesRepo;
-import com.research.service.TasksExpectedOutcomesService;
+import com.research.repositories.project.TasksExpectedOutcomesRepo;
+import com.research.service.project.TasksExpectedOutcomesService;
+import com.research.serviceimpl.BaseServiceImpl;
 
 @Service
 public class TasksExpectedOutcomesServiceImpl extends BaseServiceImpl<TasksExpectedOutcomes> implements TasksExpectedOutcomesService{

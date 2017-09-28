@@ -1,6 +1,8 @@
-package com.research.dto;
+package com.research.dto.project;
 
 import java.util.Date;
+
+import com.research.dto.BaseDto;
 
 public class ProjectDto extends BaseDto {
 

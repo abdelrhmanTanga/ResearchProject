@@ -1,6 +1,6 @@
-package com.research.dto;
+package com.research.dto.project;
 
-import com.research.dto.project.TaskDTO;
+import com.research.dto.BaseDto;
 
 public class TasksExpectedOutcomesDto extends BaseDto {
 
@@ -23,6 +23,14 @@ public class TasksExpectedOutcomesDto extends BaseDto {
 
 	public void setExpectation(String expectation) {
 		this.expectation = expectation;
+	}
+	
+	public TaskDTO getTaskId() {
+		return taskId;
+	}
+
+	public void setTaskId(TaskDTO taskId) {
+		this.taskId = taskId;
 	}
 
 }

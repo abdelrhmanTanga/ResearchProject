@@ -1,4 +1,7 @@
-package com.research.dto;
+package com.research.dto.sysuser;
+
+import com.research.dto.BaseDto;
+import com.research.dto.RoleDto;
 
 public class SysUserRolesDto extends BaseDto {
 

@@ -1,4 +1,4 @@
-package com.research.controllers;
+package com.research.controllers.project;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.research.dto.ProjectTypeDto;
-import com.research.service.ProjectTypeService;
+import com.research.dto.project.ProjectTypeDto;
+import com.research.service.project.ProjectTypeService;
 
 @RestController
 @RequestMapping("/projecttype")

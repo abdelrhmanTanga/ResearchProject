@@ -1,12 +1,14 @@
-package com.research.dto;
+package com.research.dto.project;
 
 import java.util.Collection;
+
+import com.research.dto.BaseDto;
 
 public class LFMDto extends BaseDto {
 
 	private static final long serialVersionUID = 1L;
 	private ProjectDto projectDtoId;
-	private Collection<TaskDto> tasksDtoCollection;
+	private Collection<TaskDTO> tasksDtoCollection;
 
 	public ProjectDto getProjectDtoId() {
 		return projectDtoId;
@@ -16,11 +18,11 @@ public class LFMDto extends BaseDto {
 		this.projectDtoId = projectDtoId;
 	}
 
-	public Collection<TaskDto> getTasksDtoCollection() {
+	public Collection<TaskDTO> getTasksDtoCollection() {
 		return tasksDtoCollection;
 	}
 
-	public void setTasksDtoCollection(Collection<TaskDto> tasksDtoCollection) {
+	public void setTasksDtoCollection(Collection<TaskDTO> tasksDtoCollection) {
 		this.tasksDtoCollection = tasksDtoCollection;
 	}
 
