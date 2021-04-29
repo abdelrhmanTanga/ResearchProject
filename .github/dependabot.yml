@@ -1,0 +1,50 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: org.springframework.boot:spring-boot-starter-parent
+    versions:
+    - 2.4.2
+    - 2.4.3
+    - 2.4.4
+  - dependency-name: org.springframework:spring-orm
+    versions:
+    - 5.3.3
+    - 5.3.4
+    - 5.3.5
+  - dependency-name: org.hibernate:hibernate-entitymanager
+    versions:
+    - 5.4.27.Final
+    - 5.4.28.Final
+    - 5.4.29.Final
+  - dependency-name: org.hibernate:hibernate-core
+    versions:
+    - 5.4.27.Final
+    - 5.4.28.Final
+    - 5.4.29.Final
+  - dependency-name: org.postgresql:postgresql
+    versions:
+    - 42.2.18
+    - 42.2.19
+  - dependency-name: org.springframework.security:spring-security-config
+    versions:
+    - 5.4.2
+    - 5.4.4
+    - 5.4.5
+  - dependency-name: org.springframework.security:spring-security-web
+    versions:
+    - 5.4.2
+    - 5.4.4
+    - 5.4.5
+  - dependency-name: org.springframework.security:spring-security-core
+    versions:
+    - 5.4.2
+    - 5.4.4
+    - 5.4.5
+  - dependency-name: org.hibernate:hibernate-c3p0
+    versions:
+    - 5.4.27.Final
